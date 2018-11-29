@@ -31,22 +31,20 @@ namespace kursach
                     // label1.Text = db.lvl1.Where(w => w.id == '2').Select(s => s.question).FirstOrDefault();
                 }
             }
-            List<lvl1> listlvl1()
-            {
-                int id;
-                List<lvl1> lvl1s = new List<lvl1>();
+         //   List<lvl1> listlvl1()
+         //   {
+         //       int id;
+         //       List<lvl1> lvl1s = new List<lvl1>();
+         //       var res = from o in db.lvl1
+         //                where o.id == id
+         //                 select new
+         //                 {
 
-
-                var res = from o in db.lvl1
-                          where o.id == id
-                          select new
-                          {
-
-                          }
+         //                 }
     
-          return lvl1s();
+         //return lvl1s();
 
-            }
+         //   }
 
             private void checkBox4_CheckedChanged(object sender, EventArgs e)
             {
