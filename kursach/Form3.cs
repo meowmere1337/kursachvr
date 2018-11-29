@@ -10,65 +10,91 @@ using System.Windows.Forms;
 
 namespace kursach
 {
-        public partial class Form3 : Form
+    public partial class Form3 : Form
+    {
+        Entities db = new Entities();
+        public lvl1 Question { get; set; }
+        public int Number { get; set; }
+        public Form2 frm2 { get; set; }
+        public Form3(Form2 frm2)
         {
-            Entities db = new Entities();
-            public Form3()
-            {
-                InitializeComponent();
-                label1.Text = db.lvl1.Select(s => s.question).First();
-                checkBox1.Text = db.lvl1.Select(s => s.answer).First();
-                checkBox2.Text = db.lvl1.Select(s => s.answer1).First();
-                checkBox3.Text = db.lvl1.Select(s => s.answer2).First();
-                checkBox4.Text = db.lvl1.Select(s => s.answer3).First();
+            InitializeComponent();
 
+            Number = 0;
+            Question = GetNextQuestion();
+            UpdateUI(Question);
+            this.frm2 = frm2;
+            
+
+
+        }
+        private List<Button> shuffle (List<Button> buttons) // Рандом для кнопок
+        {
+            var randomList = new List<Button>();
+            Random r = new Random();
+            int randomIndex = 0;
+            while (buttons.Count > 0)
+            {
+                randomIndex = r.Next(0, buttons.Count);
+                randomList.Add(buttons[randomIndex]);
+                buttons.RemoveAt(randomIndex);
             }
 
-            private void button1_Click(object sender, EventArgs e)
+            return randomList ;
+        }
+        private lvl1 GetNextQuestion()
+        {
+            
+            try
             {
-                if (checkBox1.Checked == true)
-                {
-                    // label1.Text = db.lvl1.Where(w => w.id == '2').Select(s => s.question).FirstOrDefault();
-                }
+                var lvl1 = db.lvl1.OrderBy(x => x.id).Skip(Number).First();
+                Number++;
+                return lvl1;
             }
-         //   List<lvl1> listlvl1()
-         //   {
-         //       int id;
-         //       List<lvl1> lvl1s = new List<lvl1>();
-         //       var res = from o in db.lvl1
-         //                where o.id == id
-         //                 select new
-         //                 {
-
-         //                 }
-    
-         //return lvl1s();
-
-         //   }
-
-            private void checkBox4_CheckedChanged(object sender, EventArgs e)
+            catch
             {
-
+                MessageBox.Show("Вы прошли игру))))))))))))))))))))))))))))))");
+                frm2.Show();
+                this.Close();
             }
+            return null;
+        }
 
-            private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        private void buttonAnswer_Click(object sender, EventArgs e)
+        {
+            var txt = ((Button)sender).Text;
+            if(Question.answer == txt)
             {
-
+                Question = GetNextQuestion();                
+                UpdateUI(Question);
+                return; 
             }
-
-            private void checkBox2_CheckedChanged(object sender, EventArgs e)
+            MessageBox.Show("Вы проиграли(");
+            frm2.Show();
+            this.Close();
+            
+        }
+        private void UpdateUI(lvl1 question)
+        {
+            if(question == null)
             {
-
+                return;
             }
-
-            private void checkBox1_CheckedChanged(object sender, EventArgs e)
+            label1.Text = question.question;
+            var buttons = new List<Button>
             {
+                this.buttonAnswer,
+                this.buttonAnswer1,
+                this.buttonAnswer2,
+                this.buttonAnswer3
+            };
+            buttons = this.shuffle(buttons);
+            buttons[0].Text = question.answer;
+            buttons[1].Text = question.answer1;
+            buttons[2].Text = question.answer2;
+            buttons[3].Text = question.answer3;
 
-            }
-
-            private void label1_Click(object sender, EventArgs e)
-            {
-
-            }
         }
     }
+
+}

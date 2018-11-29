@@ -27,9 +27,10 @@ namespace kursach
             users user = db.users.Where(x => x.login == log && x.password == par).FirstOrDefault();
             if (user != null)
             {
-                Form2 f2sh = new Form2();
-                this.Hide();
+                Form2 f2sh = new Form2(log);
                 f2sh.Show();
+                this.Hide();
+                
             }
             else
             {

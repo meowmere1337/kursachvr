@@ -33,7 +33,11 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAnswer = new System.Windows.Forms.Button();
+            this.buttonAnswer1 = new System.Windows.Forms.Button();
+            this.buttonAnswer2 = new System.Windows.Forms.Button();
+            this.buttonAnswer3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -85,22 +89,65 @@
             this.checkBox4.Text = "Четвертое";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonAnswer
             // 
-            this.button1.Location = new System.Drawing.Point(12, 144);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Следующее слово";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAnswer.Location = new System.Drawing.Point(147, 31);
+            this.buttonAnswer.Name = "buttonAnswer";
+            this.buttonAnswer.Size = new System.Drawing.Size(75, 23);
+            this.buttonAnswer.TabIndex = 11;
+            this.buttonAnswer.Text = "button2";
+            this.buttonAnswer.UseVisualStyleBackColor = true;
+            this.buttonAnswer.Click += new System.EventHandler(this.buttonAnswer_Click);
+            // 
+            // buttonAnswer1
+            // 
+            this.buttonAnswer1.Location = new System.Drawing.Point(147, 60);
+            this.buttonAnswer1.Name = "buttonAnswer1";
+            this.buttonAnswer1.Size = new System.Drawing.Size(75, 23);
+            this.buttonAnswer1.TabIndex = 12;
+            this.buttonAnswer1.Text = "button3";
+            this.buttonAnswer1.UseVisualStyleBackColor = true;
+            this.buttonAnswer1.Click += new System.EventHandler(this.buttonAnswer_Click);
+            // 
+            // buttonAnswer2
+            // 
+            this.buttonAnswer2.Location = new System.Drawing.Point(147, 91);
+            this.buttonAnswer2.Name = "buttonAnswer2";
+            this.buttonAnswer2.Size = new System.Drawing.Size(75, 23);
+            this.buttonAnswer2.TabIndex = 13;
+            this.buttonAnswer2.Text = "button4";
+            this.buttonAnswer2.UseVisualStyleBackColor = true;
+            this.buttonAnswer2.Click += new System.EventHandler(this.buttonAnswer_Click);
+            // 
+            // buttonAnswer3
+            // 
+            this.buttonAnswer3.Location = new System.Drawing.Point(147, 120);
+            this.buttonAnswer3.Name = "buttonAnswer3";
+            this.buttonAnswer3.Size = new System.Drawing.Size(75, 23);
+            this.buttonAnswer3.TabIndex = 14;
+            this.buttonAnswer3.Text = "button5";
+            this.buttonAnswer3.UseVisualStyleBackColor = true;
+            this.buttonAnswer3.Click += new System.EventHandler(this.buttonAnswer_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(64, 171);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "1";
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(256, 193);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.buttonAnswer3);
+            this.Controls.Add(this.buttonAnswer2);
+            this.Controls.Add(this.buttonAnswer1);
+            this.Controls.Add(this.buttonAnswer);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
@@ -120,6 +167,10 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAnswer;
+        private System.Windows.Forms.Button buttonAnswer1;
+        private System.Windows.Forms.Button buttonAnswer2;
+        private System.Windows.Forms.Button buttonAnswer3;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -32,6 +32,7 @@
             this.button1Start = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.labelNick = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -72,12 +73,23 @@
             this.buttonExit.TabIndex = 3;
             this.buttonExit.Text = "Выйти";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // labelNick
+            // 
+            this.labelNick.AutoSize = true;
+            this.labelNick.Location = new System.Drawing.Point(52, 9);
+            this.labelNick.Name = "labelNick";
+            this.labelNick.Size = new System.Drawing.Size(13, 13);
+            this.labelNick.TabIndex = 4;
+            this.labelNick.Text = "1";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(267, 155);
+            this.Controls.Add(this.labelNick);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.button1Start);
@@ -95,5 +107,6 @@
         private System.Windows.Forms.Button button1Start;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelNick;
     }
 }
